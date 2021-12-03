@@ -22,7 +22,7 @@ def from_bin(s):
 
 
 # ANSWER 1
-from_bin(gam) * from_bin(eps)
+print(from_bin(gam) * from_bin(eps))
 
 # %%
 df2 = df[0].apply(lambda x: pd.Series(list(x)))
@@ -54,4 +54,4 @@ co2 = df2_co2.apply(lambda x: "".join(x), axis=1)[0]
 
 # %%
 # ANSWER 2
-from_bin(oxy) * from_bin(co2)
+print(from_bin(oxy) * from_bin(co2))

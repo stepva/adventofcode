@@ -1,5 +1,5 @@
 # %%
-f = open('input_2.txt', 'r')
+f = open('2021/input_2.txt', 'r')
 
 #%%
 hor, dep = 0, 0
@@ -13,8 +13,12 @@ for i in f.readlines():
             dep += steps
         case 'up':
             dep -= steps
-        
-hor * dep
+
+# ANSWER 1        
+print(hor * dep)
+
+# %%
+f = open('2021/input_2.txt', 'r')
 
 # %%
 hor, dep, aim = 0, 0, 0
@@ -29,5 +33,8 @@ for i in f.readlines():
             aim += steps
         case 'up':
             aim -= steps
-        
-hor * dep
+
+# ANSWER 2
+print(hor * dep)
+
+# %%
