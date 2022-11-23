@@ -85,3 +85,7 @@ func main() {
 
 }
 
+// notes:
+// fmt.Sscanf(l, "%d-%d %1s: %s", &lower, &upper, &char, &pw) cool way to parse a string of some format, instead of spliting multiple times!
+// doing letter == string(password[pos_a-1]) twice is a waste
+// go can do valid++ instead of valid = valid + 1
