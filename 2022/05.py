@@ -16,8 +16,9 @@ for n, i in enumerate(instructions):
 n_crates = max([int(x) for x in n_crates.split(" ") if not x in [" ", ""]])
 crates = [[] for i in range(n_crates)]
 
-# fill crates with starting positions
 re_crates = re.compile(r"[ \[\]]")
+re_moves = re.compile(r"move (\d+) from (\d+) to (\d+)")
+# fill crates with starting positions
 for i in range(len(crates_list) - 1, -1, -1):
     crate_row = crates_list[i] + " "
     for i in range(0, len(crate_row), 4):
@@ -28,7 +29,7 @@ for i in range(len(crates_list) - 1, -1, -1):
 
 # run procedures
 for i in procedures:
-    n, from_crate, to_crate = re.match(r"move (\d+) from (\d+) to (\d+)", i).groups()
+    n, from_crate, to_crate = re_moves.match(i).groups()
     n = int(n)
     from_crate = int(from_crate) - 1
     to_crate = int(to_crate) - 1
@@ -52,9 +53,8 @@ for i in range(len(crates_list) - 1, -1, -1):
             crates_2[i // 4].append(c)
 
 # run procedures
-
 for i in procedures:
-    n, from_crate, to_crate = re.match(r"move (\d+) from (\d+) to (\d+)", i).groups()
+    n, from_crate, to_crate = re_moves.match(i).groups()
     n = int(n)
     from_crate = int(from_crate) - 1
     to_crate = int(to_crate) - 1
